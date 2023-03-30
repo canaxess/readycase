@@ -1,8 +1,10 @@
 # readycase
 ## Drag and drop functionality via the keyboard
+Whilst the functionality could be accomplished any number of ways, when you move away from native HTML elements into complex interactions. Aaccessibiltiy requirements become more difficult to implement.
+
 **Individual items**
 * Every item contained in an `<li>` element
-* Every item has a checkbox with appropriate labelling. The below example uses `aria-labelledby` but a `<label>` element, or `aria-label` could be alternatives
+* Every item has a checkbox with appropriate labelling. The below example uses `aria-labelledby` however a `<label>` element, or `aria-label` could be alternatives
 
 ```html
 <li><input type="checkbox" aria-labelledby="lbl1"> <span id="lbl1">10:00-10:00 (COMM)</span></li>
