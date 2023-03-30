@@ -17,3 +17,8 @@
 **Workflow**
 * Clicking **drop** will move the checked items from the source cell to the destination cell
 * Clicking **uncheck** will uncheck the items in the source cell
+
+### Relevant WCAG success criteria
+* [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html) - all functionality must be available from the keyboard
+and, shortcut and access keys do not conflict with browser or assistive technology shortcuts
+* [2.5.1 Pointer Gestures](https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures.html) - path-based multi-point functionality can be operated with single-point actions
