@@ -1,8 +1,8 @@
 # readycase
 ## Drag and drop functionality via the keyboard
-Whilst the functionality could be accomplished any number of ways, when you move away from native HTML elements into complex interactions. Aaccessibiltiy requirements become more difficult to implement.
+Whilst the functionality could be accomplished any number of ways, when you move away from native HTML elements into complex interactions using `<div>` and `<span>` elements. Accessibility requirements become more difficult to implement.
 
-**Individual items**
+**Individual items** (items which will be moved between cells / days of the week)
 * Every item contained in an `<li>` element
 * Every item has a checkbox with appropriate labelling. The below example uses `aria-labelledby` however a `<label>` element, or `aria-label` could be alternatives
 
@@ -10,7 +10,7 @@ Whilst the functionality could be accomplished any number of ways, when you move
 <li><input type="checkbox" aria-labelledby="lbl1"> <span id="lbl1">10:00-10:00 (COMM)</span></li>
 ```
 
-**Individual cells**
+**Individual cells** (days of the week)
 * All cells are keyboard focusable, the user can move in any direction. Each cell has `tabindex="1"`
 * When a cell receives keyboard focus, the buttons **drop** and **uncheck** are visible. Buttons use native HTML `<button>` elements
 * The buttons receive keyboard focus directly after the cell, the focus order is **cell > drop button > uncheck button**
@@ -48,3 +48,6 @@ These regions create aural zones which the screen reader uses to announce conten
 
 ### Relevant WCAG success criteria
 * [4.1.3 Status Messages](https://www.w3.org/WAI/WCAG21/Understanding/status-messages.html) - all client-side updated success or action outcome messages use role=status
+
+## Clickable size
+* [WCAG 2.2 requirements](https://www.w3.org/TR/WCAG22/#target-size-minimum) set a minimum target size for pointer inputs to be 24 x 24 pixels. Whilst you could alternate between pixel size depending on device, users who navigate with a mouse and have mobility impairments will still encounter difficulties if the target size remains the current dimenions. Increasing it to the minimum 24 x 24 pixel size will position the product to be more forward focused for WCAG 2.2 due out later this year.
