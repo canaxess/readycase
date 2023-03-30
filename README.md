@@ -24,3 +24,27 @@ Whilst the functionality could be accomplished any number of ways, when you move
 * [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html) - all functionality must be available from the keyboard
 and, shortcut and access keys do not conflict with browser or assistive technology shortcuts
 * [2.5.1 Pointer Gestures](https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures.html) - path-based multi-point functionality can be operated with single-point actions
+
+## Aria live region
+These regions create aural zones which the screen reader uses to announce content. They're typically created to provide audible feedback for clientside content updates.
+
+**Move Assist**
+* Create a live region container around all of the updates
+* Add `role="status` to the container
+* Add the container content via Javascript. Adding the content to the live region will trigger the screen reader to announce the content. However it only announces **new** content
+* Adding `aria-atomic="true"` to the container will trigger the screen reader to announce all content, both old and new (though has had patchy support). To reliability trigger the screen reader to announce all content each time regardless if anything has changed. The entire live region container needs to be reset to empty, and text readded.
+* The live region works best with only text content (no controls)
+
+```html
+<div role="status">
+
+<ul>
+<li>Item that can be moved</li>
+<li>Item with issues</li>
+</ul>
+
+</div>
+```
+
+### Relevant WCAG success criteria
+* [4.1.3 Status Messages](https://www.w3.org/WAI/WCAG21/Understanding/status-messages.html) - all client-side updated success or action outcome messages use role=status
